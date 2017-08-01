@@ -1,0 +1,64 @@
+{
+  "postinstall": "install-app-deps",
+  "build": {
+    "asar": false,
+    "directories": {
+      "app": "app"
+    },
+    "appId": "io.lbry.LBRY",
+    "mac": {
+      "category": "public.app-category.utilities",
+      "target": "dmg"
+    },
+    "dmg": {
+      "iconSize": 128,
+      "contents": [
+        {
+          "x": 115,
+          "y": 164
+        },
+        {
+          "x": 387,
+          "y": 164,
+          "type": "link",
+          "path": "/Applications"
+        }
+      ],
+      "window": {
+        "x": 200,
+        "y": 200,
+        "width": 500,
+        "height": 300
+      },
+      "backgroundColor": "155B4A"
+    },
+    "protocols": [
+      {
+        "name": "lbry",
+        "role": "Viewer",
+        "schemes": [
+          "lbry"
+        ]
+      }
+    ],
+    "linux": {
+      "target": "deb",
+      "desktop": {
+        "MimeType": "x-scheme-handler/lbry",
+        "Exec": "/opt/LBRY/lbry %U"
+      }
+    },
+    "win": {
+      "target": "nsis"
+    },
+    "nsis": {
+      "perMachine": true
+    }
+  },
+  "devDependencies": {
+    "devtron": "^1.4.0",
+    "electron": "^1.4.15",
+    "electron-builder": "^11.7.0",
+    "electron-debug": "^1.1.0"
+  }
+}
